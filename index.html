@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horse Racing DApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏇 Horse Racing Betting DApp</h1>
+        <div id="account"></div>
+        <div id="race-status"></div>
+        <section id="pool-section">
+            <h2>Total Pool</h2>
+            <div id="total-pool">Loading...</div>
+        </section>
+        <section id="horses-section">
+            <h2>Horses</h2>
+            <table id="horses-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Trainer</th>
+                        <th>Odds</th>
+                        <th>Horse Pool</th>
+                        <th>Your Bet</th>
+                        <th>Bet</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section id="bet-section">
+            <h2>Place a Bet</h2>
+            <form id="bet-form">
+                <label for="horse-id">Horse ID:</label>
+                <input type="number" id="horse-id" min="1" required>
+                <label for="bet-amount">Amount (ETH):</label>
+                <input type="number" id="bet-amount" step="0.01" min="0.001" required>
+                <button type="submit">Place Bet</button>
+            </form>
+            <div id="bet-message"></div>
+        </section>
+        <section id="winnings-section">
+            <h2>Your Winnings</h2>
+            <button id="withdraw-btn">Withdraw Winnings</button>
+            <div id="winnings-message"></div>
+        </section>
+        <section id="admin-section" style="display: none;">
+            <h2>Admin Controls</h2>
+            <form id="add-horse-form">
+                <h3>Add Horse</h3>
+                <input type="text" id="new-horse-name" placeholder="Horse Name" required>
+                <input type="text" id="new-trainer-name" placeholder="Trainer Name" required>
+                <input type="number" id="new-horse-odds" placeholder="Odds (e.g. 235 for 2.35)" required>
+                <button type="submit">Add Horse</button>
+            </form>
+            <form id="remove-horse-form">
+                <h3>Remove Horse</h3>
+                <input type="number" id="remove-horse-id" placeholder="Horse ID" required>
+                <button type="submit">Remove Horse</button>
+            </form>
+            <form id="choose-winner-form">
+                <h3>Choose Winner</h3>
+                <input type="number" id="winner-horse-id" placeholder="Winning Horse ID" required>
+                <button type="submit">Distribute Winnings</button>
+            </form>
+            <button id="start-race-btn">Start New Race</button>
+            <button id="withdraw-house-btn">Withdraw House Take</button>
+            <div id="admin-message"></div>
+        </section>
+    </div>
+    <div id="error-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
+      <div style="background:white; padding:24px 32px; border-radius:8px; max-width:90vw; box-shadow:0 2px 8px rgba(0,0,0,0.2); position:relative;">
+        <span id="close-modal" style="position:absolute; top:8px; right:12px; font-size:24px; cursor:pointer;">&times;</span>
+        <div id="error-modal-message" style="color:#b00; font-size:16px;"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
