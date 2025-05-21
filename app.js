@@ -1,5 +1,5 @@
 // Replace with your deployed contract address and ABI
-const CONTRACT_ADDRESS = "0xc3036F4Cf88393EaAa9814946710E21aDA89423A";
+const CONTRACT_ADDRESS = "0x5F5dDEd9b58c85d7Ac55e81b5D5a9F88e89531d2";
 const CONTRACT_ABI = [
 	{
 		"inputs": [
@@ -326,6 +326,19 @@ const CONTRACT_ABI = [
 				"internalType": "string",
 				"name": "trainerName",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "houseTake",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
